@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: hsl(240, 6%, 50%);
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.wrapper {
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.card {
+  display: flex;
+  width: 60%;
+  background-color: white;
+  border-radius: 20px;
+  min-height: 60vh;
+  box-shadow: 0px 6px 12px -1px rgba(0, 0, 0, 0.36);
+}
+
+.card-images {
+  flex: 1fr;
+  position: relative;
+  background: no-repeat 107% 70%/180% url("/images/bg-pattern-desktop.svg"),
+    no-repeat 100% 45%/120% url("/images/illustration-woman-online-desktop.svg");
+}
+
+.box-image {
+  transform: scale(0.8) translate(-60%, 100%);
+  position: absolute;
+}
+
+.mobile-image {
+  visibility: hidden;
+}
+
+.woman-image {
+  visibility: hidden;
+  position: absolute;
+}
+
+.faq-section {
+  flex: 1fr;
+  width: 100%;
+  padding: 60px 90px 30px 60px;
+}
+.faq-section h2 {
+  color: hsl(238, 29%, 16%);
+  margin-bottom: 20px;
+
+  font-size: 24px;
+}
+
+details {
+  padding: 15px 10px 15px 10px;
+  border-bottom: 1px solid hsl(240, 5%, 91%);
+  cursor: pointer;
+}
+
+summary {
+  outline: none;
+  color: hsl(237, 12%, 33%);
+}
+
+summary:hover {
+  color: hsl(14, 88%, 65%);
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: url(/images/icon-arrow-down.svg);
+  float: right;
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+details[open] summary {
+  color: hsl(238, 29%, 16%);
+  font-weight: 600;
+}
+
+details > p {
+  margin-top: 15px;
+}
+
+.attribution {
+  color: black;
+  margin-top: 10px;
+}
+
+@media all and (max-width: 700px) {
+  .card {
+    flex-direction: column;
+    width: 80vw;
+    margin-top: 50px;
+  }
+
+  .card-images {
+    background: url("/images/bg-pattern-mobile.svg") no-repeat top center;
+  }
+
+  .mobile-image {
+    visibility: visible;
+    transform: translate(0, -50%);
+    position: absolute;
+  }
+
+  .box-image {
+    visibility: hidden;
+  }
+
+  .faq-section {
+    width: 100%;
+    padding: 150px 10px 10px 10px;
+  }
+
+  .faq-section h2 {
+    padding-left: 110px;
+  }
+}
